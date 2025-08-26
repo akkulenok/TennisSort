@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Draw {
@@ -11,13 +13,15 @@ public class Draw {
 
         while (startStopGame) {
             System.out.println(countOfGames++ + " Игра:");
-
-            for (int j = 1; j <= 4; j++) {
-                System.out.println(players.get((i + j) % players.size()).getName());
-                if (j == 2) System.out.println("ПРОТИВ:");
-            }
+            List<Player> inGamePlayers = new ArrayList<>();
+            for (int j = 1; j <= 4; j++) inGamePlayers.add(players.get((i + j) % players.size()));
             i++;
 
+            Collections.shuffle(inGamePlayers);
+            for (int j = 0; j < inGamePlayers.size(); j++) {
+                System.out.println(inGamePlayers.get(j).getName());
+                if (j == 1) System.out.println("ПРОТИВ: ");
+            }
             System.out.println(" \n|-----------------------------------------|\n");
             if (i == players.size()) i = 0;
 
