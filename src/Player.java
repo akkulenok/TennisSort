@@ -10,13 +10,4 @@ public class Player {
     public String getName() {
         return name;
     }
-
-    public int getPlayerID() {
-        return playerID;
-    }
-
-    public void setName(String firstName) {
-        this.name = name;
-    }
-
 }

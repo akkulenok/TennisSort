@@ -20,7 +20,7 @@ public class Draw {
             Collections.shuffle(inGamePlayers);
             for (int j = 0; j < inGamePlayers.size(); j++) {
                 System.out.println(inGamePlayers.get(j).getName());
-                if (j == 1) System.out.println("ПРОТИВ: ");
+                if (j == 1) System.out.println("|-----------ПРОТИВ-----------|");
             }
             System.out.println(" \n|-----------------------------------------|\n");
             if (i == players.size()) i = 0;
